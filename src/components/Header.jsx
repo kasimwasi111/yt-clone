@@ -12,6 +12,7 @@ import { CgClose } from "react-icons/cg";
 
 import { Context } from "../context/contextApi";
 import Loader from "../shared/loader";
+import heroImage from "../images/heroImage.png";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -39,6 +40,7 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black">
       {loading && <Loader />}
+
       <div className="flex h-5 items-center">
         {pageName !== "video" && (
           <div
@@ -92,10 +94,7 @@ const Header = () => {
           </div>
         </div>
         <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-          <img
-            src="https://xsgames.co/randomusers/assets/avatars/male/32.jpg"
-            alt=""
-          />
+          <img src={heroImage} alt="" />
         </div>
       </div>
     </div>

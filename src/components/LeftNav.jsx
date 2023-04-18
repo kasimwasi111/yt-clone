@@ -6,7 +6,7 @@ import { categories } from "../utils/constants";
 import { Context } from "../context/contextApi";
 
 const LeftNav = () => {
-  const { selectedCategories, setSelectedCategories, mobileMenu } =
+  const { selectedCategory, setSelectedCategory, mobileMenu } =
     useContext(Context);
 
   const navigate = useNavigate();
@@ -14,9 +14,9 @@ const LeftNav = () => {
   const clickHandler = (name, type) => {
     switch (type) {
       case "category":
-        return setSelectedCategories(name);
+        return setSelectedCategory(name);
       case "home":
-        return setSelectedCategories(name);
+        return setSelectedCategory(name);
       case "menu":
         return false;
       default:
@@ -42,7 +42,7 @@ const LeftNav = () => {
                   navigate("/");
                 }}
                 className={`${
-                  selectedCategories === item.name ? "bg-white/[0.15]" : ""
+                  selectedCategory === item.name ? "bg-white/[0.15]" : ""
                 }`}
               />
               {item.divider && <hr className="my-5 border-white/[0.2]" />}
@@ -51,7 +51,7 @@ const LeftNav = () => {
         })}
         <hr className="my-5 border-white/[0.2]" />
         <div className="text-white/[0.5] text-[12px]">
-          Clone by: JS Dev Hindi
+          Created &#xA9; Kasim Wasi
         </div>
       </div>
     </div>
